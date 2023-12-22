@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <header className='header'>
       <NavLink to='/'>
-        <img src={logo} alt='logo' className='w-18 h-18 object-contain' />
+       <h1 style={{fontSize:"2.6rem" , textAlign:"center",fontFamily:"cursive"}} className="text-center text-lg bold">Blitzchlag</h1>
       </NavLink>
       <nav className='flex text-lg gap-7 font-medium'>
         <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600" : "text-black" }>

@@ -6,11 +6,11 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
-        Hi, I'm
-        <span className='font-semibold mx-2 text-white'>Adrian</span>
+        Khamba
+        <span className='font-semibold mx-2 text-white'>Ghani</span>
         👋
         <br />
-        A Software Engineer from Croatia 🇭🇷
+        Welcome to the Official Page of Blitzchlag
       </h1>
     );
 
@@ -48,11 +48,11 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
       <p className='font-medium sm:text-xl text-center'>
-        Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
+       Register for the Events <br/>  just in a few strokes
       </p>
 
       <Link to='/contact' className='neo-brutalism-white neo-btn'>
-        Let's talk
+        Register
         <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
       </Link>
     </div>
