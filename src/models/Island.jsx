@@ -14,7 +14,7 @@ import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
-import islandScene from "../assets/3d/fort_1.glb";
+import islandScene from "../assets/3d/indian_gazebo.glb";
 
 export function Island({
   isRotating,
@@ -26,7 +26,7 @@ export function Island({
   const islandRef = useRef();
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
-  const { nodes, materials } = useGLTF(islandScene);
+  const { nodes, materials,scene } = useGLTF(islandScene);
 
   // Use a ref for the last mouse x position
   const lastX = useRef(0);
@@ -181,22 +181,649 @@ export function Island({
 
   return (
     // {Island 3D model from: https://sketchfab.com/3d-models/foxs-islands-163b68e09fcc47618450150be7785907}
-    <a.group ref={islandRef} {...props}>
+    <a.group ref={islandRef} {...props} scale={[0.0005, 0.0005, 0.0005]}>
       {
-        console.log("materials",materials)
+        console.log("materials",materials.material_0)
         
       }
       {
         console.log("nodes",nodes)
       }
-       <mesh
-          castShadow="true"
-          receiveShadow="true"
-          geometry={nodes.Model_material0_0.geometry}
-          material={materials.material0}
-        
-          rotation={[Math.PI/2, 0, 0]}
+       <group rotation={[-Math.PI/2,0,-Math.PI/2]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Pole_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[11050, -13950, 0]}
         />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailTop_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -13000, 29166.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailPoleTop_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -12763.676, 27366.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Base_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -51850, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Light_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8100, -71150, -6800]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Carry_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[5176.785, -14500, 25166.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Stairs_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -62650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailMain_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8000, -25150, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailPoleMain_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[9050, -24550, 600]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailPoleL3_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8600, -42750, -5681.313]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailL3_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8000, -42850, -6000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.B_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -68650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailPoleL2_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8600, -50250, -5400]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.LightBase_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[7600, -71650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailL2_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8000, -51850, -6000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Top_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[-10763.65, -10763.65, 30366.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Roof_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[-19000, -19000, 23166.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailPoleL1_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8600, -68550, -11681.313]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailL1_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[8000, -68650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Detail_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[0, -12800, 16400]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.RailL12_low_material_0_0.geometry}
+          material={materials.material_0}
+          position={[68650, -10200.1, -12000]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Detail_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12799.998, 16400]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL12_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[68650, 10200.102, -11999.999]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleTop_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12763.673, 27366.779]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL1_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8000, 68650, -11999.994]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL1_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8600, 68550, -11681.307]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL2_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8000, 51850, -5999.996]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL2_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8600, 50250, -5399.996]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL3_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8000, 42850, -5999.996]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL3_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8600, 42750, -5681.309]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleMain_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[9050, 24550, 600.002]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailMain_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8000, 25150, 0.002]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["B_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 68650, -11999.994]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Stairs_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 62650, -11999.994]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["LightBase_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[7600, 71650, -11999.994]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Light_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[8100, 71150, -6799.994]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Carry_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[5176.785, 14499.997, 25166.781]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Base_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 51850, -11999.995]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Top_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-10763.65, 10763.647, 30366.779]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailTop_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12999.997, 29166.779]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Roof_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-19000, 18999.998, 23166.783]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Pole_low_(2)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[11050, 13950, 0.001]}
+          rotation={[0, 0, Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Pole_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-11050, 13950, 0.001]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Roof_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[19000, 18999.998, 23166.783]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailTop_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12999.997, 29166.779]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Top_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[10763.65, 10763.647, 30366.779]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Base_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 51850, -11999.995]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Carry_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-5176.785, 14499.997, 25166.781]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Light_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8100, 71150, -6799.994]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["LightBase_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-7600, 71650, -11999.994]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Stairs_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 62650, -11999.994]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["B_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 68650, -11999.994]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailMain_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, 25150, 0.002]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleMain_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-9050, 24550, 600.002]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL3_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, 42750, -5681.309]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL3_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, 42850, -5999.996]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL2_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, 50250, -5399.996]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL2_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, 51850, -5999.996]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL1_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, 68550, -11681.307]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL1_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, 68650, -11999.994]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleTop_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12763.673, 27366.779]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL12_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-68650, 10200.102, -11999.999]}
+          rotation={[0, 0, -Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Detail_low_(3)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, 12799.998, 16400]}
+          rotation={[0, 0, -Math.PI]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Detail_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -12800, 16400]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL12_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-68650, -10200.101, -12000]}
+          rotation={[0, 0, -Math.PI / 2]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleTop_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -12763.676, 27366.777]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL1_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, -68650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL1_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, -68550, -11681.313]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL2_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, -51850, -6000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL2_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, -50250, -5400]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailL3_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, -42850, -6000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleL3_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8600, -42750, -5681.313]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailPoleMain_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-9050, -24550, 600]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailMain_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8000, -25150, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["B_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -68650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Stairs_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -62650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["LightBase_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-7600, -71650, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Light_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-8100, -71150, -6800]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Carry_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-5176.785, -14500, 25166.779]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Base_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -51850, -12000]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Top_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[10763.65, -10763.65, 30366.777]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["RailTop_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[0, -13000, 29166.777]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Roof_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[19000, -19000, 23166.781]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["Pole_low_(4)_material_0_0"].geometry}
+          material={materials.material_0}
+          position={[-11050, -13950, 0]}
+        />
+      </group>
     </a.group>
+    
   );
 }
